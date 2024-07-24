@@ -30,13 +30,13 @@ function App() {
   return (
     <>
       <StartComponent propData={"testProp"} />
-      <ListComponent></ListComponent>
       <Routes>
         <Route path="/" element={<Home onCreate={onCreate} ></Home>} />
         <Route path="/main" element={<Main></Main>} />
         <Route path="/routerVal/:id" element={<RouterVal></RouterVal>} />
         <Route path="*" element={<NotPound></NotPound>} />
       </Routes>
+      <ListComponent userList={userListArr} ></ListComponent>
     </>
   )
 }
