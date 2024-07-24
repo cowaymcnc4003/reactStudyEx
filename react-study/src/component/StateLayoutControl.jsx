@@ -1,7 +1,7 @@
 import { useState } from "react";
 import UserInput from "./UserInput";
 
-const StateLayoutControl = ({ message }) => {
+const StateLayoutControl = ({ onCreate, message }) => {
   console.log(message);
   const [layoutFlg, setLayoutFlg] = useState(false);
   const onClickLayoutControl = () => {
@@ -12,7 +12,7 @@ const StateLayoutControl = ({ message }) => {
       <h4>3.useState_layout_control</h4>
       <button onClick={onClickLayoutControl}>layout control</button>
       {layoutFlg ? <div>layoutTrue화면</div> : <div>layoutFalse화면</div>}
-      <UserInput message={"UserInput"}></UserInput>
+      <UserInput onCreate={onCreate} message={"UserInput"}></UserInput>
     </div>
   );
 };

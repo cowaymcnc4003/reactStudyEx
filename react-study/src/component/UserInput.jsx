@@ -1,6 +1,6 @@
 import useInput from "../hook/userInput";
 
-const UserInput = ({ message }) => {
+const UserInput = ({ onCreate, message }) => {
   console.log(message);
 
   const [userInfo, OnChangeHandlerUserInfo] = useInput({
@@ -9,6 +9,10 @@ const UserInput = ({ message }) => {
     nation: 'kr',
     content: "안녕하세요",
   });
+
+  const onSubmit = () => {
+    onCreate(userInfo);
+  }
 
   return (
     <div>
@@ -28,9 +32,7 @@ const UserInput = ({ message }) => {
       <div>
         <textarea name="content" onChange={OnChangeHandlerUserInfo} value={userInfo.content}></textarea>
       </div>
-      <button onClick={() => {
-        console.log(JSON.stringify(userInfo));
-      }}>userInfo 확인</button>
+      <button onClick={onSubmit}>userInfo 확인</button>
     </div>
   );
 };
