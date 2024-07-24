@@ -23,7 +23,7 @@ const Home = () => {
   console.log('ref값' + inputChkTest.current);
   return (
     <div>
-      Home
+      <h4>useState useRef</h4>
       <div>
         <button onClick={onClickEventHandler}>state값 +</button>
         <button onClick={onClickEventHandlerRefIncrease}>Ref값 +</button>
