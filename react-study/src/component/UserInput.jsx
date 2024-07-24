@@ -1,27 +1,14 @@
-import { useState } from "react";
+import useInput from "../hook/userInput";
 
 const UserInput = ({ message }) => {
   console.log(message);
-  const [userInfo, setUserInfo] = useState({
+
+  const [userInfo, OnChangeHandlerUserInfo] = useInput({
     name: '이명한',
     birth: '1989-02-12',
     nation: 'kr',
     content: "안녕하세요",
   });
-  // 계속 추가 어려움
-  // const OnChangeHandlerName = (e) => {
-  //   setUserInfo({
-  //     ...userInfo, reference function 이용
-  //     'name': e.target.value <-- 항목 추가
-  //   });
-  // }
-
-  const OnChangeHandlerUserInfo = (e) => {
-    setUserInfo({
-      ...userInfo,
-      [e.target.name]: e.target.value
-    });
-  }
 
   return (
     <div>
