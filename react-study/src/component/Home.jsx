@@ -38,7 +38,7 @@ const Home = () => {
         <div>{`useState상태 ${increaseNumber}`}</div>
         <div>{`useRef상태 ${inputChkTest.current}`}</div>
       </div>
-      <StateLayoutControl></StateLayoutControl>
+      <StateLayoutControl message={"stateLayout"}></StateLayoutControl>
     </div>
   );
 };
