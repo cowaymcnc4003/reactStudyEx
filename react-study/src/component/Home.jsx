@@ -1,6 +1,7 @@
 // import { useRef } from "react";
 
 import { useRef, useState } from "react";
+import StateLayoutControl from "./StateLayoutControl";
 
 const Home = () => {
   const [increaseNumber, setIncreaseNumber] = useState(0);
@@ -37,6 +38,7 @@ const Home = () => {
         <div>{`useState상태 ${increaseNumber}`}</div>
         <div>{`useRef상태 ${inputChkTest.current}`}</div>
       </div>
+      <StateLayoutControl></StateLayoutControl>
     </div>
   );
 };
