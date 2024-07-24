@@ -12,7 +12,7 @@ const UserInput = ({ message }) => {
   // const OnChangeHandlerName = (e) => {
   //   setUserInfo({
   //     ...userInfo, reference function 이용
-  //     'name': e.target.value
+  //     'name': e.target.value <-- 항목 추가
   //   });
   // }
 
