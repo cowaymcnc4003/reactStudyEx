@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import StateLayoutControl from "./StateLayoutControl";
 import ReducerExam from "./ReducerExam";
 
-const Home = ({ onCreate }) => {
+const Home = () => {
   const [increaseNumber, setIncreaseNumber] = useState(0);
   const onClickEventHandler = () => {
     setIncreaseNumber(increaseNumber + 1);
@@ -39,7 +39,7 @@ const Home = ({ onCreate }) => {
         <div>{`useState상태 ${increaseNumber}`}</div>
         <div>{`useRef상태 ${inputChkTest.current}`}</div>
       </div>
-      <StateLayoutControl onCreate={onCreate} message={"stateLayout"}></StateLayoutControl>
+      <StateLayoutControl message={"stateLayout"}></StateLayoutControl>
       <ReducerExam></ReducerExam>
     </div>
   );

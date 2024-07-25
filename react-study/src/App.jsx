@@ -7,7 +7,10 @@ import Main from './component/Main'
 import RouterVal from './component/RouterVal'
 import NotPound from './component/NotPound'
 import ListComponent from './component/ListComponent'
-import { useEffect, useRef, useState } from 'react'
+import { createContext, useEffect, useRef, useState } from 'react'
+
+export const UserInfoStateContext = createContext();
+export const UserInfoDispatchContext = createContext();
 
 function App() {
   const [userListArr, setUserListArr] = useState([]);
@@ -29,14 +32,18 @@ function App() {
   };
   return (
     <>
-      <StartComponent propData={"testProp"} />
-      <Routes>
-        <Route path="/" element={<Home onCreate={onCreate} ></Home>} />
-        <Route path="/main" element={<Main></Main>} />
-        <Route path="/routerVal/:id" element={<RouterVal></RouterVal>} />
-        <Route path="*" element={<NotPound></NotPound>} />
-      </Routes>
-      <ListComponent userList={userListArr} ></ListComponent>
+      <UserInfoStateContext.Provider value={userListArr}>
+        <UserInfoDispatchContext.Provider value={{ onCreate }}>
+          <StartComponent propData={"testProp"} />
+          <Routes>
+            <Route path="/" element={<Home></Home>} />
+            <Route path="/main" element={<Main></Main>} />
+            <Route path="/routerVal/:id" element={<RouterVal></RouterVal>} />
+            <Route path="*" element={<NotPound></NotPound>} />
+          </Routes>
+          <ListComponent></ListComponent>
+        </UserInfoDispatchContext.Provider>
+      </UserInfoStateContext.Provider>
     </>
   )
 }

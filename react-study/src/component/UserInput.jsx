@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import useInput from "../hook/userInput";
+import { UserInfoDispatchContext } from "../App";
 
-const UserInput = ({ onCreate, message }) => {
+const UserInput = ({ message }) => {
+  const { onCreate } = useContext(UserInfoDispatchContext);
   console.log(message);
 
   const [userInfo, OnChangeHandlerUserInfo] = useInput({

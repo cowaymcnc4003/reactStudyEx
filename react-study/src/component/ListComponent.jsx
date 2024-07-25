@@ -1,4 +1,8 @@
-const ListComponent = ({ userList }) => {
+import { useContext } from "react";
+import { UserInfoStateContext } from "../App";
+
+const ListComponent = () => {
+  const userList = useContext(UserInfoStateContext);
   console.log(`userListArr ${JSON.stringify(userList)}`);
   return (
     <div>
