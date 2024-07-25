@@ -9,8 +9,8 @@ import NotPound from './component/NotPound'
 import ListComponent from './component/ListComponent'
 import { createContext, useEffect, useRef, useState } from 'react'
 
-export const UserInfoStateContext = createContext();
-export const UserInfoDispatchContext = createContext();
+export const UserInfoStateContext = createContext(); // 데이터
+export const UserInfoDispatchContext = createContext(); // dispatch 모음
 
 function App() {
   const [userListArr, setUserListArr] = useState([]);
